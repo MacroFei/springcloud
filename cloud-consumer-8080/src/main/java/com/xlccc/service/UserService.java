@@ -20,15 +20,20 @@ public interface UserService {
     @GetMapping("/users/{id}")
     public ResponseResult getUser(@PathVariable("id") Integer id);
 
+    /**
+     * Feign传递对象参数
+     * 方式一：将对象参数拆分为多个简单类型参数，且必须添加@RequestParam注解
+     */
     @PostMapping("/users")
-    public ResponseResult postUser(User user);
+    public ResponseResult postUser(@RequestParam("username") String username, @RequestParam("password") String password);
+
+    /**
+     * 方式二：使用Map替代对象参数，且必须添加@RequestParam注解
+     */
+    @PutMapping("/users")
+    public ResponseResult putUser(@RequestParam Map<String, Object> map);
 
     @DeleteMapping("/users/{id}")
     public ResponseResult deleteUser(@PathVariable Integer id);
-
-//    @PutMapping("/users")
-//    public ResponseResult putUser(User user);
-    @PutMapping("/users")
-    public ResponseResult putUser(@RequestParam Map<String , Object> map);
 
 }

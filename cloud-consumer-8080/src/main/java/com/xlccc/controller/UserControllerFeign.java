@@ -38,7 +38,7 @@ public class UserControllerFeign {
 
     @PostMapping
     public ResponseResult postUser(User user) {
-        return userService.postUser(user);
+        return userService.postUser(user.getUsername(),user.getPassword());
     }
 
     @DeleteMapping("/{id}")
@@ -50,12 +50,18 @@ public class UserControllerFeign {
         return userService.deleteUser(id);
     }
 
+//    @PutMapping
+//    public ResponseResult putUser(User user) {
+//        Map<String , Object> map = new HashMap<>();
+//        map.put("id",user.getId());
+//        map.put("username",user.getUsername());
+//        map.put("password",user.getPassword());
+//        return userService.putUser(map);
+//    }
+    //此处可以直接使用map来接收参数
     @PutMapping
-    public ResponseResult putUser(User user) {
-        //此处只能在URL中通过键值对的形式进行参数的传递
-
-        return  userService.postUser(user);
+    public ResponseResult putUser(@RequestParam Map map) {
+        return userService.putUser(map);
     }
-
 
 }
