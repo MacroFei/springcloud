@@ -1,0 +1,13 @@
+server:
+  port: 7001
+
+
+eureka:
+  client:
+    # �Ƿ��Լ�ע�ᵽEureka-Server�У�Ĭ��Ϊtrue
+    register-with-eureka: false
+    # �Ƿ��Eureka-Server�л�ȡ�����ṩ�ߵ�ע����Ϣ
+    fetch-registry: false
+    # ����ע�����ĵĵ�ַ
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
