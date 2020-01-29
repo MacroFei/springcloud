@@ -9,6 +9,7 @@
         <module name="cloud-common" />
         <module name="cloud-consumer-8080" />
         <module name="cloud-provider-8001" />
+        <module name="cloud-zuul-6001" />
         <module name="cloud-eureka-7001" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="cloud-consumer-8080" options="-parameters" />
       <module name="cloud-eureka-7001" options="-parameters" />
       <module name="cloud-provider-8001" options="-parameters" />
+      <module name="cloud-zuul-6001" options="-parameters" />
     </option>
   </component>
 </project>
