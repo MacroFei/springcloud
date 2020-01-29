@@ -11,7 +11,7 @@ import javax.xml.ws.Response;
 import java.util.Map;
 
 // 调用的服务器，到Eureka中查找对应的服务名，找到的是：微服务的ip：端口，即http://localhost:8001
-@FeignClient(value = "user-provider")
+@FeignClient(value = "user-provider",fallback = UserServiceFallback.class)
 @Service
 public interface UserService {
     @GetMapping("/users")

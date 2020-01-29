@@ -29,6 +29,10 @@ public class UserController {
     @ApiOperation(value = "获取用户列表",notes = "获取所有用户信息（备注）")
     @GetMapping
     public ResponseResult getUserList() {
+
+        System.out.println("访问...UserController.getUserList");
+        int i = 5 / 0 ;
+
         List<User> list = new ArrayList<>(users.values());
         return ResponseResult.success(list);
     }

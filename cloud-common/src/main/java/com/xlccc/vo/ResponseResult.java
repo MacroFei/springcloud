@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.xml.ws.Response;
 import java.io.Serializable;
 @ApiModel(value = "ResponseResult 响应结果对象")
 @Data
@@ -31,6 +32,12 @@ public class ResponseResult implements Serializable {
         ResponseResult rs = new ResponseResult();
         rs.setCode(200);
         rs.setMessage("success");
+        return rs;
+    }
+    public static ResponseResult fail(String message){
+        ResponseResult rs = new ResponseResult();
+        rs.setCode(500);
+        rs.setMessage(message);
         return rs;
     }
 }

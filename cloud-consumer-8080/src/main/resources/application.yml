@@ -10,3 +10,9 @@ eureka:
     # 设置注册中心的地址
     service-url:
       defaultZone: http://localhost:7001/eureka/
+
+# 启用断路器
+feign:
+  hystrix:
+    enabled: true
+
